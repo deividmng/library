@@ -1,0 +1,44 @@
+header {
+    background-color: rgb(250, 232, 232);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    button {
+        border: none;
+        background-color: transparent;
+    }
+  
+   
+}
+
+// this si the img ADD 
+.btn-img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.9s ease, transform-origin 0.5s ease;
+    
+    &:hover {
+        filter: drop-shadow(5px 5px 3px #888888);
+        transform: scale(1.2) rotate(360deg);
+    }
+}
+
+.btn-img:active {
+    transform: scale(1.2) rotate(360deg);
+    transform-origin: center;
+}
+
+
+
+
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr;
+    margin-top: 10px;
+    gap: 1rem;
+}

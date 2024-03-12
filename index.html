@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+    <link rel="stylesheet" href="./src/app.css">
+</head>
+<body>
+
+    <header>
+        <h1>Your Personal Library</h1>
+        <button id="new-book-btn" >
+            <img src="assets/icons8-add-100.png" alt="Add a Book"  class="btn-img">
+        </button>
+    </header>
+
+
+    
+    <form action="" id="new-book-form" style="display: none;" >
+
+        <label for="">Title</label>
+        <input type="text" name="" id="title" placeholder="title">
+        
+        <label for="">Author</label>
+        <input type="text" name="" id="author" placeholder="Author">
+
+        <label for="">Pages</label>
+        <input type="number" name="" id="pages" placeholder="pages">
+
+        <label for="read">Read</label>
+        <input type="checkbox" id="read">
+
+        <input type="submit" value="Add book">
+    </form>
+
+
+    <main>
+        <div id="library" class="grid" ></div>
+    </main>
+    
+</body>
+<script src="./script.js"></script>
+</html>

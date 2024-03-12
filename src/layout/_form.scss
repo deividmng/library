@@ -1,0 +1,52 @@
+
+#new-book-form {
+    display: block; /* Show the form by default (optional) */
+
+    /* Basic styles */
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  
+    /* Labels */
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    /* Inputs */
+    input[type="text"],
+    input[type="checkbox"] {
+      display: block;
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      box-sizing: border-box; 
+    }
+  
+    /* Checkbox */
+    input[type="checkbox"] {
+      display: inline-block;
+      width: auto; 
+      margin-right: 5px;
+    }
+  
+    
+    input[type="submit"] {
+      background-color: #4CAF50; 
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+  
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  }
+  
