@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>library</title>
-    <link rel="stylesheet" href="./src/app.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./src/app.css" />
+  </head>
+  <body>
     <header>
-        <h1>Your Personal Library</h1>
-        <button id="new-book-btn" >
-            <img src="assets/icons8-add-100.png" alt="Add a Book"  class="btn-img">
-        </button>
+      <h1>Your Personal Library</h1>
+      <button id="new-book-btn">
+        <img src="assets/icons8-add-100.png" alt="Add a Book" class="btn-img" />
+      </button>
     </header>
 
+    <form action="" id="new-book-form">
+      <div class="error__close" >
+        <svg
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+            fill="#393a37"
+          ></path>
+        </svg>
+      </div>
 
-    
-    <form action="" id="new-book-form" style="display: none;" >
+      <label for="">Title</label>
+      <input type="text" name="" id="title" placeholder="title" required />
 
-        <label for="">Title</label>
-        <input type="text" name="" id="title" placeholder="title">
-        
-        <label for="">Author</label>
-        <input type="text" name="" id="author" placeholder="Author">
+      <label for="">Author</label>
+      <input type="text" name="" id="author" placeholder="Author" required />
 
-        <label for="">Pages</label>
-        <input type="number" name="" id="pages" placeholder="pages">
+      <label for="">Pages</label>
+      <input type="number" name="" id="pages" placeholder="pages" required />
 
+
+      <div class="checkbox-container">
         <label for="read">Read</label>
-        <input type="checkbox" id="read">
+        <input type="checkbox" class="checkmark" id="read" />
+    </div>
 
-        <input type="submit" value="Add book">
+ 
+    
+
+      <input type="submit" value="Add book" />
     </form>
 
+    
 
     <main>
-        <div id="library" class="grid" ></div>
+      <div id="library" class="grid"></div>
     </main>
-    
-</body>
-<script src="./script.js"></script>
+  </body>
+  <script src="./script.js"></script>
 </html>

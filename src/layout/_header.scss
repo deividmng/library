@@ -1,8 +1,22 @@
+body {
+    background-color: darken($color: #fae8e8 , $amount: 5)   ;
+}
+
+
+
+
 header {
     background-color: rgb(250, 232, 232);
     margin: auto;
     display: flex;
     justify-content: space-between;
+
+    border-bottom: 1px solid darken($color: #fae8e8 , $amount: 15)   ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        margin-left: 10px;
+    }
     button {
         border: none;
         background-color: transparent;
