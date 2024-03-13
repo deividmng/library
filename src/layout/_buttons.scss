@@ -1,0 +1,17 @@
+.error__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px; /* Ajusta el margen según sea necesario */
+    cursor: pointer;
+}
+
+.error__close path {
+    fill: #71192F;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+

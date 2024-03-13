@@ -19,12 +19,6 @@ function Book(title, author, pages, read) {
 
 Book.prototype.toggleRead = function () {
   this.read = !this.read;
-    /*     if (this.read === true) {
-        this.read = false;
-    } else {
-        this.read = true;
-    } this.read = !this.read; is the same but on the sort cut
-     this.read = this.read ? false : true;    */ 
 };
 
 function toggleRead(index) {
@@ -45,11 +39,13 @@ function render() {
     bookEl.classList.add("book-item");
 
     bookEl.innerHTML = `<h1> ${book.title}</h1>
+        <div class="display-flex">
         <h3> By: ${book.author}</h3>
         <p>Pages: ${book.pages}</p>
-        <p> Read: ${book.read ? "Yes" : "No yet"}</p>
-        <button class="remove-btn" onclick="removeBook(${i})">Delete</button>
-        <button class="toggle-read-btn" onclick="toggleRead(${i})">Toggle Read</button>
+        </div>
+        <p>  ${book.read ? "Read" : "No yet"}</p>
+        <button class="toggle-read-btn" onclick="toggleRead(${i})">Read</button>
+        <button class="remove-btn"  onclick="removeBook(${i})">Delete</button>
         `;
 
     libraryEl.appendChild(bookEl);
@@ -77,22 +73,61 @@ function addBookToLibrary() {
   saveLibraryToLocalStorage();
 }
 
-let newBookntn = document.getElementById("new-book-btn");
-newBookntn.addEventListener("click", function () {
-  let newBookntn = document.getElementById("new-book-form");
-  newBookntn.style.display = "block";
+let newBookBtn = document.getElementById("new-book-btn");
+let newBookForm = document.getElementById("new-book-form");
+
+newBookBtn.addEventListener("click", function () {
+  newBookForm.classList.toggle("show");
+});
+
+let form = document.getElementById("new-book-form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  addBookToLibrary();
+  form.classList.remove("show");
 });
 
 
 
-let form = document.getElementById("new-book-form")
 
-document
-  .getElementById("new-book-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    addBookToLibrary();
+function removeBook(index) {
+  const bookEl = document.querySelector(`#library .book-item:nth-child(${index + 1})`);
+  bookEl.classList.add('removing');
 
-    form.style.display = "none";
-    
-  });
+  setTimeout(() => {
+      myLibrary.splice(index, 1);
+      render();
+      saveLibraryToLocalStorage();
+  }, 900); 
+
+}  
+
+// function removeBook(index) {
+//   // Preguntar al usuario si realmente desea eliminar el libro
+//   const confirmation = confirm("¿Estás seguro de que quieres eliminar este libro?");
+
+//   if (confirmation) {
+//     const bookEl = document.querySelector(`#library .book-item:nth-child(${index + 1})`);
+//     bookEl.classList.add('removing');
+
+//     setTimeout(() => {
+//       myLibrary.splice(index, 1);
+//       render();
+//       saveLibraryToLocalStorage();
+//     }, 900);
+
+//     alert("Libro eliminado exitosamente.");
+//   } else {
+//     alert("Operación de eliminación cancelada.");
+//   }
+// }
+
+
+
+
+
+// THIS IS THE X TO CLOSE THE FORM 
+document.querySelector('.error__close').addEventListener('click', function () {
+  newBookForm.classList.remove('show');
+});
